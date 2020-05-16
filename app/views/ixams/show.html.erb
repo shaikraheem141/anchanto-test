@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ixam.name %>
+</p>
+<p>
+  <strong>No.of Questions Assigned:</strong>
+  <%= @ques_count %>
+</p>
+
+<%= link_to 'Edit', edit_ixam_path(@ixam) %> |
+<%= link_to 'Back', ixams_path %> |
+<%= link_to 'Add Questions', add_questions_ixam_path %>

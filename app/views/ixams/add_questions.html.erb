@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Questions</h1>
+<%= form_with(local: true) do %>
+<table>
+  <thead>
+    <tr>
+    <th><%= check_box_tag(:question_head) %></th>
+      <th>Gtext</th>
+      <th>Gtype</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+      <th><%= check_box_tag 'sel_ques[]', question.id %></th>
+        <td><%= question.gtext %></td>
+        <td><%= question.gtype %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= button_tag "Add Questions to Exam" %>
+<% end %>
+<%= link_to 'Back', ixam_path(params[:id]) %>

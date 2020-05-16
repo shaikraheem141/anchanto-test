@@ -1,0 +1,22 @@
+<%= form_with(model: ixam, local: true) do |form| %>
+  <% if ixam.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(ixam.errors.count, "error") %> prohibited this ixam from being saved:</h2>
+
+      <ul>
+        <% ixam.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
